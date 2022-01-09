@@ -1,13 +1,13 @@
 import turtle as t
 playerAscore = 0
 playerBscore = 0
-
+#code for creating screen/window
 window=t.Screen()
 window.title("PONG")
 window.bgcolor("cyan")
 window.setup(width=800,height=600)
 window.tracer(0)
-
+#code for creating left paddle 
 leftpaddle= t.Turtle()
 leftpaddle.speed(0)
 leftpaddle.shape("square")
@@ -15,6 +15,7 @@ leftpaddle.color("white")
 leftpaddle.shapesize(stretch_wid=8,stretch_len=0.5)
 leftpaddle.penup()
 leftpaddle.goto(-350,0)
+#code for creating right paddle
 
 rightpaddle= t.Turtle()
 rightpaddle.speed(0)
@@ -23,6 +24,7 @@ rightpaddle.color("white")
 rightpaddle.shapesize(stretch_wid=8,stretch_len=0.5)
 rightpaddle.penup()
 rightpaddle.goto(350,0)
+#code for creating ball
 
 ball = t.Turtle()
 ball.speed(0)
@@ -32,7 +34,7 @@ ball.penup()
 ball.goto(5,5)
 ballxdirection=0.2
 ballydirection=0.2
-
+#score
 pen=t.Turtle()
 pen.speed(0)
 pen.color("white")
@@ -40,9 +42,7 @@ pen.penup()
 pen.hideturtle()
 pen.goto(0,260)
 pen.write("SCORE", align="center",font=("MS Sans Serif",24,"normal"))
-
-
-
+#key commands
 def leftpaddleup():
     y= leftpaddle.ycor()
     y=y+90
@@ -70,6 +70,7 @@ window.onkeypress(rightpaddleup,"Up")
 window.onkeypress(rightpaddledown,"Down")
 
 while True:
+    #code for collisions
     window.update()
 
     ball.setx(ball.xcor()+ballxdirection)
