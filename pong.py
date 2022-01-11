@@ -7,6 +7,7 @@ window.title("PONG")
 window.bgcolor("cyan")
 window.setup(width=800,height=600)
 window.tracer(0)
+#create each paddle
 
 bar1= t.Turtle()
 bar1.speed(0)
@@ -23,6 +24,7 @@ bar2.color("white")
 bar2.shapesize(stretch_wid=8,stretch_len=0.5)
 bar2.penup()
 bar2.goto(350,0)
+#create the ball
 
 ball = t.Turtle()
 ball.speed(0)
@@ -33,6 +35,7 @@ ball.goto(5,5)
 
 ballxdirection=0.2
 ballydirection=0.2
+#create scoreboard
 
 pen=t.Turtle()
 pen.speed(0)
@@ -42,7 +45,7 @@ pen.hideturtle()
 pen.goto(0,260)
 pen.write("SCORE", align="center",font=("MS Sans Serif",24,"normal"))
 
-
+#set commands to keys
 
 def leftpaddleup():
     y= bar1.ycor()
@@ -69,7 +72,7 @@ window.onkeypress(leftpaddleup,"w")
 window.onkeypress(leftpaddledown,"s")
 window.onkeypress(rightpaddleup,"Up")
 window.onkeypress(rightpaddledown,"Down")
-
+#set collisions 
 while True:
     window.update()
 
